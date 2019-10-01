@@ -2,6 +2,8 @@ import React from 'react';
 import Image from './Image';
 import Question from './Question';
 import Answer from './Answer';
+import Tips from './Tips';
+
 
 export default class Content extends React.Component{
 
@@ -16,7 +18,7 @@ export default class Content extends React.Component{
                     onQuestionAnswer={this.props.onQuestionAnswer}
             />
 
-          
+
           </div>
 
           <div class="col-4">
@@ -28,11 +30,11 @@ export default class Content extends React.Component{
           </div>
           <div class ="col-4">
               <ul>
-                <h1><li>Tips: {this.props.question.tips}</li></h1>
+                <Tips question={this.props.question}/>
                 <h1><li>Author name: {this.props.question.author.username}</li></h1>
-                <span class="image left">
-                <img src={this.props.question.author.photo.url} width="150"/>
-                </span>
+                    <span class="image right">
+                      <img src={this.props.question.author.photo.url} width="150"/>
+                      </span>
                 </ul>
         </div>
         </div>

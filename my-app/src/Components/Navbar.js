@@ -14,7 +14,7 @@ export default class Navbar extends React.Component{
 
         <h1><a href="index.html">QUIZ Game</a></h1>
         <img src={this.props.logo}/>
-        
+
       </header>
 
     );

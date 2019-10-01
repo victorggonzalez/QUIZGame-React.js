@@ -10,14 +10,13 @@ export default class Content extends React.Component{
         <section class="box">
         <div class="row">
           <div class="col-4">
-            <div  key="Question" className="Question" text-align="center">
-              <h3><p>{this.props.question.question}</p></h3>
-            </div>
-            <div  key="Answer" className="Answer">
-                <input type="text" placeholder="Responda aquí" value={this.props.question.userAnswer || ''}
-                onChange={(e)=>{
-                  this.props.onQuestionAnswer(e.target.value);}}/>
-            </div>
+            <Question question={this.props.question} text-align="center"/>
+
+            <Answer question={this.props.question}
+                    onQuestionAnswer={this.props.onQuestionAnswer}
+            />
+
+          
           </div>
 
           <div class="col-4">

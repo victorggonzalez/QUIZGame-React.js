@@ -4,7 +4,9 @@ export default class Question extends React.Component{
 
   render(){
     return(
-        <h1>Hola</h1>
+      <div className="Question">
+        <h3><p>{this.props.question.question}</p></h3>
+        </div>
     );
   }
 

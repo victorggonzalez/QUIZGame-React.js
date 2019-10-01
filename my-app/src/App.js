@@ -14,7 +14,6 @@ import './assets/css/animation.css';
 
 function App(props) {
   console.log(props);
-  console.log(logo);
 
   return (
     <div>

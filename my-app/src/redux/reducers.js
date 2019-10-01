@@ -1,5 +1,8 @@
 import { combineReducers } from 'redux';
 import {QUESTION_ANSWER} from './actions';
+import {CHANGE_QUESTION} from './actions';
+
+
 
 function score(state = 0, action = {}){
   switch(action.type){
@@ -17,6 +20,9 @@ function finished(state = false, action = {}){
 
 function currentQuestion(state = 0, action = {}){
   switch(action.type){
+    case  CHANGE_QUESTION:
+      return action.payload.index;
+
     default:
       return state;
   }

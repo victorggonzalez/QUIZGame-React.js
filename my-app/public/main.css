@@ -2112,7 +2112,7 @@
 		select:focus,
 		textarea:focus {
 			border-color: #e89980;
-			box-shadow: 0 0 0 2px #6495ed; !importante
+			box-shadow: 0 0 0 2px #6495ed;
 		}
 
 	select {

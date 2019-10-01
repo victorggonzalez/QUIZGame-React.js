@@ -13,10 +13,15 @@ export default class Game extends React.Component{
       <div key="Game" className="Game">
         <section className="Content" >
 				    <Content question={this.props.question}
-					       onQuestionAnswer={this.props.onQuestionAnswer}/>
+					           onQuestionAnswer={this.props.onQuestionAnswer}
+                 />
         </section>
         <section className="Actionbar" class="box">
-				    <Actionbar question={this.props.question}/>
+				    <Actionbar question={this.props.question}
+                      questions={this.props.questions}
+                      currentQuestion={this.props.currentQuestion}
+                      onChangeQuestion={this.props.onChangeQuestion}
+             />
         </section>
 			</div>
       </section>

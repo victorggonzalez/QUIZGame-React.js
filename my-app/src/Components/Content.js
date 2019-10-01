@@ -7,16 +7,14 @@ export default class Content extends React.Component{
 
   render(){
     return(
-        <div class="box">
+        <section class="box">
         <div class="row">
           <div class="col-4">
             <div  key="Question" className="Question" text-align="center">
-
               <h3><p>{this.props.question.question}</p></h3>
-
             </div>
             <div  key="Answer" className="Answer">
-                <input type="text"  placeholder="Responda aquí" value={this.props.question.userAnswer || ''}
+                <input type="text" placeholder="Responda aquí" value={this.props.question.userAnswer || ''}
                 onChange={(e)=>{
                   this.props.onQuestionAnswer(e.target.value);}}/>
             </div>
@@ -25,7 +23,7 @@ export default class Content extends React.Component{
           <div class="col-4">
             <div  key="Image" className="Image">
               <span class="image fit">
-                <img src={this.props.question.attachment.url} width="150"/>
+                <img src={this.props.question.attachment.url} />
               </span>
             </div>
           </div>
@@ -39,7 +37,7 @@ export default class Content extends React.Component{
                 </ul>
         </div>
         </div>
-        </div>
+        </section>
 
     );
   }

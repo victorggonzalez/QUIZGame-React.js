@@ -6,33 +6,48 @@ import {changeQuestion} from './redux/actions';
 import {initQuestions} from './redux/actions';
 
 
-import logo from './assets/quiz.png';
+import {logo} from './assets/quiz.png';
 import list from './assets/list.png';
 import Game from './Components/Game.js';
 import Navbar from './Components/Navbar.js';
 import './assets/css/animation.css';
 
 
-function App(props) {
-  console.log(props);
+function mapStateToProps(state){
+  return{    ...state};
+}
 
+class App extends React.Component {
+componentDidMount(){
+  let url = "https://quiz.dit.upm.es/api/quizzes/random10wa?token=b61cccee4c3c81170f14"
+
+  fetch(url)
+      .then(res => res.json())
+      .then(json => {
+        this.props.dispatch(initQuestions(json))})
+      .catch(error => {
+        console.log(error);
+});
+}
+
+render(props) {
+  console.log(props);
   return (
-    <div>
-      <Navbar/>
-      <Game questions={props.questions}
-          question={props.questions[props.currentQuestion]}
-          currentQuestion={props.currentQuestion}
-          onQuestionAnswer={(answer) =>{props.dispatch(questionAnswer(props.currentQuestion, answer))}}
-          onChangeQuestion={(nextQuestion)=>{props.dispatch(changeQuestion(nextQuestion))}}
-          onInitQuestions={(questions)=>props.dispatch(initQuestions(props.questions))}
+    <div className="App">
+      <Navbar logo ={this.props.logo}/>
+      <Game questions={this.props.questions}
+          question={this.props.questions[this.props.currentQuestion]}
+          currentQuestion={this.props.currentQuestion}
+          onQuestionAnswer={(answer) =>{this.props.dispatch(questionAnswer(this.props.currentQuestion, answer))}}
+          onChangeQuestion={(nextQuestion)=>{this.props.dispatch(changeQuestion(nextQuestion))}}
+          onInitQuestions={(questions)=>this.props.dispatch(initQuestions(props.questions))}
            />
 
     </div>
   );
 }
 
-function mapStateToProps(state){
-  return{    ...state};
+
 }
 
 export default connect(mapStateToProps)(App);

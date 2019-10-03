@@ -45,7 +45,7 @@ function questions(state = [], action = {}){
                       action.payload.answer : question.userAnswer}
       })
       case  INIT_QUESTIONS:
-        return action.payload;
+        return action.payload.questions;
 
     default:
       return state;

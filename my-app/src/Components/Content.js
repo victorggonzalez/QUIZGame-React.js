@@ -22,9 +22,9 @@ export default class Content extends React.Component{
           </div>
 
           <div class="col-4">
-            <div  key="Image" className="Image">
+            <div key="Image" className="Image">
               <span class="image fit">
-                <img src={this.props.question.attachment.url} />
+                <img src={this.props.question.attachment.url} alt="Imagen"/>
               </span>
             </div>
           </div>
@@ -33,7 +33,7 @@ export default class Content extends React.Component{
                 <Tips question={this.props.question}/>
                 <h1><li>Author name: {this.props.question.author.username}</li></h1>
                     <span class="image right">
-                      <img src={this.props.question.author.photo.url} width="150"/>
+                      <img src={this.props.question.author.photo.url} width="150" alt="Imagen"/>
                       </span>
                 </ul>
         </div>

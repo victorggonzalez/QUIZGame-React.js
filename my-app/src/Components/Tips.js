@@ -15,7 +15,7 @@ export default class Tips extends React.Component {
           <ul>
             {this.props.question.tips.map((tip,id)=>{
 			           return (
-                   <li key={"li"+id}>
+                   <li>
                    {tip}
                    </li>
                  );})}

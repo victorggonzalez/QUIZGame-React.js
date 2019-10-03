@@ -7,9 +7,7 @@ export default class Game extends React.Component{
   render() {
     return(
       <section id="main" class="container large">
-      <header>
-      <h3>LETS PLAY!</h3>
-      </header>
+
       <div key="Game" className="Game">
         <section className="Content" >
 				    <Content question={this.props.question}
@@ -21,6 +19,7 @@ export default class Game extends React.Component{
                       questions={this.props.questions}
                       currentQuestion={this.props.currentQuestion}
                       onChangeQuestion={this.props.onChangeQuestion}
+                      onInitQuestion={this.props.onInitQuestion}
              />
         </section>
 			</div>

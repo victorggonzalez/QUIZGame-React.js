@@ -8,7 +8,7 @@ export default class Image extends React.Component {
               <div>
               <div class="col-4"  key="Image" className="Image">
                 <span class="image right">
-                  <img src={this.props.question.attachment.url}/>
+                  <img src={this.props.question.attachment.url} alt="Imagen"/>
                 </span>
               </div>
               </div>

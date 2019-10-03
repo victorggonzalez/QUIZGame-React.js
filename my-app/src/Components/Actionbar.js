@@ -13,7 +13,7 @@ export default class Actionbar extends React.Component{
 
 
   preFunction(){
-    if (this.props.currentQuestion !=0){
+    if (this.props.currentQuestion !==0){
               return this.props.onChangeQuestion(this.props.currentQuestion-1);
             }else{
               return;

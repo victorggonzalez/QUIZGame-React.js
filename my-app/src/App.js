@@ -3,6 +3,7 @@ import './App.css';
 import {connect} from 'react-redux';
 import {questionAnswer} from './redux/actions';
 import {changeQuestion} from './redux/actions';
+import {initQuestions} from './redux/actions';
 
 
 import logo from './assets/quiz.png';
@@ -17,14 +18,13 @@ function App(props) {
 
   return (
     <div>
-      <Navbar logo={props.logo}
-              list={props.list}/>
+      <Navbar/>
       <Game questions={props.questions}
           question={props.questions[props.currentQuestion]}
           currentQuestion={props.currentQuestion}
           onQuestionAnswer={(answer) =>{props.dispatch(questionAnswer(props.currentQuestion, answer))}}
-          onChangeQuestion={(nextQuestion)=>{props.dispatch(changeQuestion(nextQuestion))
-              }}
+          onChangeQuestion={(nextQuestion)=>{props.dispatch(changeQuestion(nextQuestion))}}
+          onInitQuestions={(questions)=>props.dispatch(initQuestions(props.questions))}
            />
 
     </div>

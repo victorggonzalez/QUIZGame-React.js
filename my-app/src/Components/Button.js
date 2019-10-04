@@ -23,9 +23,18 @@ export default class Button extends React.Component {
 				}
 			default:
 				return false;
-
 		}
 	}
+	showQuestion(index){
+		switch (this.props.buttonName) {
+			case "1":
+				return this.props.onChangeQuestion(1);
+			default:
+				return false;
+		}
+	}
+
+
 
 
 

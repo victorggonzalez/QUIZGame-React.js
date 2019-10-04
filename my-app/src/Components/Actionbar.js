@@ -11,25 +11,21 @@ export default class Actionbar extends React.Component{
 
 	}
 
+  newQuestions(){
+    let url = "https://quiz.dit.upm.es/api/quizzes/random10wa?token=b61cccee4c3c81170f14"
 
-  preFunction(){
-    if (this.props.currentQuestion !==0){
-              return this.props.onChangeQuestion(this.props.currentQuestion-1);
-            }else{
-              return;
-            }
-  }
-
-  nextFunction(){
-    if (this.props.currentQuestion===(this.questions.length-1)){
-  							return;
-  						}else{
-  							return this.props.onChangeQuestion(this.props.currentQuestion+1);
-  						}
+    fetch(url)
+        .then(res => res.json())
+        .then(json => {
+          this.props.dispatch(this.props.onInitQuestions(json))})
+        .catch(error => {
+          console.log(error);
+        });
   }
 
   render(){
     return(
+      <div class="box">
       <div key="Actionbar" className="Actionbar" class="row">
         <div class="col-4">
             <Button buttonName="Previous" currentQuestion={this.props.currentQuestion} function={ () => {
@@ -50,6 +46,14 @@ export default class Actionbar extends React.Component{
 							return this.props.onChangeQuestion(this.props.currentQuestion+1);
 						}}}/>
         </div>
+      </div>
+      <div class="row">
+      <p/>
+      <Button buttonName="Reset"    function={ () => {
+          return this.newQuestions(); }}
+          />
+
+      </div>
       </div>
 
 

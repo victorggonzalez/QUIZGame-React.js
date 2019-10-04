@@ -31,8 +31,8 @@ export default class Content extends React.Component{
           <div class ="col-4">
               <ul>
                 <Tips question={this.props.question}/>
-                <h1><li>Author name: {this.props.question.author.username}</li></h1>
-                    <span class="image right">
+                <h1>Author name: {this.props.question.author.username}</h1>
+                    <span class="image">
                       <img src={this.props.question.author.photo.url} width="150" alt="Imagen"/>
                       </span>
                 </ul>

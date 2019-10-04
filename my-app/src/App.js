@@ -27,20 +27,23 @@ componentDidMount(){
         this.props.dispatch(initQuestions(json))})
       .catch(error => {
         console.log(error);
-});
+      });
 }
 
 render(props) {
   console.log(props);
   return (
     <div className="App">
-      <Navbar logo ={this.props.logo}/>
+      <Navbar logo ={this.props.logo}
+      list ={this.props.list}
+      questions={this.props.questions}
+      />
       <Game questions={this.props.questions}
           question={this.props.questions[this.props.currentQuestion]}
           currentQuestion={this.props.currentQuestion}
           onQuestionAnswer={(answer) =>{this.props.dispatch(questionAnswer(this.props.currentQuestion, answer))}}
           onChangeQuestion={(nextQuestion)=>{this.props.dispatch(changeQuestion(nextQuestion))}}
-          onInitQuestions={(questions)=>this.props.dispatch(initQuestions(props.questions))}
+          onInitQuestions={(questions)=>this.props.dispatch(initQuestions(this.props.questions))}
            />
 
     </div>

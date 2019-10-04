@@ -23,7 +23,7 @@ export default class Tips extends React.Component {
         </div>
         );
     } else {return(
-      <h1><li><i>No tips available yet</i></li></h1>
+			<h1><i>No tips available yet</i></h1>
 
     );}
 

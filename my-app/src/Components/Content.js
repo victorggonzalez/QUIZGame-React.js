@@ -7,27 +7,30 @@ import Tips from './Tips';
 
 export default class Content extends React.Component{
 
+
+
   render(){
     return(
         <section class="box">
         <div class="row">
           <div class="col-4">
-            <Question question={this.props.question} text-align="center"/>
-
+            <div class="row">
+            <Question question={this.props.question}
+            currentQuestion={this.props.currentQuestion}
+                      questions={this.props.questions}/>
+            </div>
+            <p/>
+            <div class="row">
             <Answer question={this.props.question}
+                    currentQuestion={this.props.currentQuestion}
                     onQuestionAnswer={this.props.onQuestionAnswer}
             />
-
-
-          </div>
-
-          <div class="col-4">
-            <div key="Image" className="Image">
-              <span class="image fit">
-                <img src={this.props.question.attachment.url} alt="Imagen"/>
-              </span>
             </div>
           </div>
+          <div class="col-4">
+            <Image question={this.props.question}/>
+          </div>
+
           <div class ="col-4">
               <ul>
                 <Tips question={this.props.question}/>

@@ -50,7 +50,7 @@ export default class Actionbar extends React.Component{
       <div class="row">
       <p/>
       <Button buttonName="Reset"    function={ () => {
-          return this.newQuestions(); }}
+          return this.props.onResetQuestions(); }}
           />
 
       </div>

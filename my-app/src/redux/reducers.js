@@ -2,6 +2,8 @@ import { combineReducers } from 'redux';
 import {QUESTION_ANSWER} from './actions';
 import {CHANGE_QUESTION} from './actions';
 import {INIT_QUESTIONS} from './actions';
+import { TIMER} from './actions';
+
 
 
 
@@ -52,13 +54,27 @@ function questions(state = [], action = {}){
   }
 }
 
+function timer(state = 120, action = {}) {
+	switch (action.type) {
+
+    case INIT_QUESTIONS:
+			return 120;
+
+    case TIMER:
+			return action.payload.time;
+		default:
+			return state;
+	}
+}
+
 
 
 const GlobalState = (combineReducers({
     score,
     finished,
     currentQuestion,
-    questions
+    questions,
+    timer
 }));
 
 export default GlobalState;

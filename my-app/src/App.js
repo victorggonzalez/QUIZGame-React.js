@@ -4,13 +4,11 @@ import {connect} from 'react-redux';
 import {questionAnswer} from './redux/actions';
 import {changeQuestion} from './redux/actions';
 import {initQuestions} from './redux/actions';
+import {timer} from './redux/actions';
 
 
-import {logo} from './assets/quiz.png';
-import list from './assets/list.png';
 import Game from './Components/Game.js';
 import Navbar from './Components/Navbar.js';
-import './assets/css/animation.css';
 
 
 function mapStateToProps(state){
@@ -28,24 +26,37 @@ componentDidMount(){
       .catch(error => {
         console.log(error);
       });
+
+      var interval = setInterval(() =>{
+            this.props.dispatch(timer(this.props.timer-1));
+            if (this.props.timer===0){
+                return;
+            }
+
+        },1000);
+
 }
 
+
 render(props) {
+
   console.log(props);
+  //Comprueba que el array de preguntas esta completo
+  let game = (this.props.questions.length == 10) ?
+  <Game questions={this.props.questions}
+      question={this.props.questions[this.props.currentQuestion]}
+      currentQuestion={this.props.currentQuestion}
+      onQuestionAnswer={(answer) =>{this.props.dispatch(questionAnswer(this.props.currentQuestion, answer))}}
+      onChangeQuestion={(nextQuestion)=>{this.props.dispatch(changeQuestion(nextQuestion))}}
+      onInitQuestions={(questions)=>this.props.dispatch(initQuestions(this.props.questions))}
+      onResetQuestions={(questions)=>this.props.dispatch(initQuestions(this.props.questions))}
+      timer={this.props.timer}
+       /> : <h2>ERROR! Not enough questions</h2>
   return (
     <div className="App">
-      <Navbar logo ={this.props.logo}
-      list ={this.props.list}
-      questions={this.props.questions}
+      <Navbar questions={this.props.questions}
       />
-      <Game questions={this.props.questions}
-          question={this.props.questions[this.props.currentQuestion]}
-          currentQuestion={this.props.currentQuestion}
-          onQuestionAnswer={(answer) =>{this.props.dispatch(questionAnswer(this.props.currentQuestion, answer))}}
-          onChangeQuestion={(nextQuestion)=>{this.props.dispatch(changeQuestion(nextQuestion))}}
-          onInitQuestions={(questions)=>this.props.dispatch(initQuestions(this.props.questions))}
-           />
-
+      {game}
     </div>
   );
 }

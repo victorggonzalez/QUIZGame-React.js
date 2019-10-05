@@ -6,9 +6,9 @@ export default class Image extends React.Component {
 
 
               <div>
-              <div class="col-4"  key="Image" className="Image">
-                <span class="image right">
-                  <img src={this.props.question.attachment.url} alt="Imagen"/>
+              <div key="Image" className="Image">
+                <span class="image fit" width="150">
+                  <img src={this.props.question.attachment.url} alt="Imagen de la pregunta"/>
                 </span>
               </div>
               </div>

@@ -31,7 +31,7 @@ export default class Content extends React.Component{
             <Image question={this.props.question}/>
           </div>
 
-          <div class ="col-4">
+          <div class="col-4">
               <ul>
                 <Tips question={this.props.question}/>
                 <h1>Author name: {this.props.question.author.username}</h1>

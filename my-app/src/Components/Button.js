@@ -25,20 +25,19 @@ export default class Button extends React.Component {
 				return false;
 		}
 	}
-	showQuestion(index){
-		switch (this.props.buttonName) {
-			case "1":
-				return this.props.onChangeQuestion(1);
-			default:
-				return false;
+
+	disableAll(finished){
+		if(finished === true){
+			return true;
 		}
 	}
 
 
 
+
 	render() {
 		return(
-      <button class="button special fit" disabled={this.disableButton(this.props.currentQuestion)} onClick={this.props.function}>{this.props.buttonName}</button>
+      <button class="button special fit" disabled={this.disableButton(this.props.currentQuestion) || this.disableAll(this.props.finished)} onClick={this.props.function}>{this.props.buttonName}</button>
 				);
 	}
 }

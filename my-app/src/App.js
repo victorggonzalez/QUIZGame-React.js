@@ -4,11 +4,20 @@ import {connect} from 'react-redux';
 import {questionAnswer} from './redux/actions';
 import {changeQuestion} from './redux/actions';
 import {initQuestions} from './redux/actions';
+<<<<<<< HEAD
 import {timer} from './redux/actions';
+=======
+import {submit} from './redux/actions';
+>>>>>>> 6bca0c46de3590d5e9dbf96eb3b4249ae4a5af65
 
 
 import Game from './Components/Game.js';
 import Navbar from './Components/Navbar.js';
+<<<<<<< HEAD
+=======
+import Button from "./Components/Button.js";
+import './assets/css/animation.css';
+>>>>>>> 6bca0c46de3590d5e9dbf96eb3b4249ae4a5af65
 
 
 function mapStateToProps(state){
@@ -50,6 +59,9 @@ render(props) {
       onChangeQuestion={(nextQuestion)=>{this.props.dispatch(changeQuestion(nextQuestion))}}
       onInitQuestions={(questions)=>this.props.dispatch(initQuestions(this.props.questions))}
       onResetQuestions={(questions)=>this.props.dispatch(initQuestions(this.props.questions))}
+      onSubmit={(questions)=>props.dispatch(submit(questions))}
+      score={props.score}
+      finished={props.finished}
       timer={this.props.timer}
        /> : <h2>ERROR! Not enough questions</h2>
   return (
@@ -62,6 +74,9 @@ render(props) {
 }
 
 
+
+function mapStateToProps(state){
+  return{    ...state};
 }
 
 export default connect(mapStateToProps)(App);

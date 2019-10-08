@@ -4,6 +4,7 @@ import Actionbar from './Actionbar';
 import Index from './Index';
 import Timer from './Timer';
 
+
 export default class Game extends React.Component{
 
   render() {
@@ -29,10 +30,10 @@ export default class Game extends React.Component{
                       questions={this.props.questions}
                       currentQuestion={this.props.currentQuestion}
                       onChangeQuestion={this.props.onChangeQuestion}
-                      onInitQuestions={this.props.onInitQuestions}
-                      onResetQuestions={this.props.onInitQuestions}
-
-
+                      onInitQuestion={this.props.onInitQuestion}
+                      onSubmit={this.props.onSubmit}
+                     score={this.props.score}
+                      finished={this.props.finished}
 
              />
       </section>

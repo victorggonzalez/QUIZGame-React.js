@@ -19,6 +19,7 @@ export function initQuestions(questions){
 
 export function timer(time) {
 	return { type: TIMER, payload: {time}};
+}
 export function submit(questions){
    return {type:SUBMIT, payload:{questions}}
 }

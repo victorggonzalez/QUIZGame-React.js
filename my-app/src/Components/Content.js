@@ -24,6 +24,7 @@ export default class Content extends React.Component{
             <Answer question={this.props.question}
                     currentQuestion={this.props.currentQuestion}
                     onQuestionAnswer={this.props.onQuestionAnswer}
+                   // score={this.props.score}
             />
             </div>
           </div>

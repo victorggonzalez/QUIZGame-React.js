@@ -27,12 +27,18 @@ export default class Button extends React.Component {
 		}
 	}
 
+	disableAll(finished){
+		if(finished === true){
+			return true;
+		}
+	}
+
 
 
 
 	render() {
 		return(
-      <button class="button special fit" disabled={this.disableButton(this.props.currentQuestion)} onClick={this.props.function}>{this.props.buttonName}</button>
+      <button class="button special fit" disabled={this.disableButton(this.props.currentQuestion) || this.disableAll(this.props.finished)} onClick={this.props.function}>{this.props.buttonName}</button>
 				);
 	}
 }

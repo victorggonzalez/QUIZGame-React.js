@@ -41,7 +41,7 @@ export default class Actionbar extends React.Component{
 						}}}/>
         </div>
         <div class="col-4">
-			     <Button buttonName="Submit" questions={this.props.questions} function={ () => {
+			     <Button buttonName="Submit" questions={this.props.questions} finished={this.props.finished}function={ () => {
             
             return this.props.onSubmit(this.props.questions);
             }}/>

@@ -23,6 +23,8 @@ export default class Game extends React.Component{
                       onInitQuestion={this.props.onInitQuestion}
                       onSubmit={this.props.onSubmit}
                      score={this.props.score}
+                      finished={this.props.finished}
+
              />
         </section>
 			</div>

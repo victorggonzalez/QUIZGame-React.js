@@ -29,7 +29,9 @@ function App(props) {
           onInitQuestions={(questions)=>props.dispatch(initQuestions(props.questions))}
           onSubmit={(questions)=>props.dispatch(submit(questions))}
           score={props.score}
+          finished={props.finished}
            />
+        
           
     </div>
   );

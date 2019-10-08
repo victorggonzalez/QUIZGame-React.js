@@ -13,60 +13,68 @@ import Game from './Components/Game.js';
 import Navbar from './Components/Navbar.js';
 
 
-function mapStateToProps(state){
+function mapStateToprops(state){
   return{    ...state};
 }
 
-function App(props){
-/*componentDidMount(){
-  let url = "https://quiz.dit.upm.es/api/quizzes/random10wa?token=b61cccee4c3c81170f14"
 
-  fetch(url)
-      .then(res => res.json())
-      .then(json => {
-        props.dispatch(initQuestions(json))})
-      .catch(error => {
-        console.log(error);
-      });
+class App extends Component{
 
-      var interval = setInterval(() =>{
-            props.dispatch(timer(props.timer-1));
-            if (props.timer===0){
-                return;
-            }
+  constructor(props){
+    super(props);
 
-        },1000);
+  }
+  componentDidMount(props) {
+    let url = "https://quiz.dit.upm.es/api/quizzes/random10wa?token=b61cccee4c3c81170f14";
 
-}*/
+    fetch(url)
+        .then(res => res.json())
+        .then(json => {
+          this.props.dispatch(initQuestions(json))})
+        .catch(error => {
+          console.log(error);
+        });
 
+        var interval = setInterval(() =>{
+              this.props.dispatch(timer(this.props.timer-1));
+              if (this.props.timer === 0){
+                  return;
+              }
 
+          },1000);
 
-
-  console.log(props);
+  }
+  render(){
+  console.log(this.props);
   //Comprueba que el array de preguntas esta completo
-  let game = (props.questions.length == 10) ?
-  <Game questions={props.questions}
-      question={props.questions[props.currentQuestion]}
-      currentQuestion={props.currentQuestion}
-      onQuestionAnswer={(answer) =>{props.dispatch(questionAnswer(props.currentQuestion, answer))}}
-      onChangeQuestion={(nextQuestion)=>{props.dispatch(changeQuestion(nextQuestion))}}
-      onInitQuestions={(questions)=>props.dispatch(initQuestions(props.questions))}
-      onResetQuestions={(questions)=>props.dispatch(initQuestions(props.questions))}
-      onSubmit={(questions)=>props.dispatch(submit(questions))}
-      score={props.score}
-      finished={props.finished}
-      timer={props.timer}
+  let game = (this.props.questions.length == 10) ?
+  <Game questions={this.props.questions}
+      question={this.props.questions[this.props.currentQuestion]}
+      currentQuestion={this.props.currentQuestion}
+      onQuestionAnswer={(answer) =>{this.props.dispatch(questionAnswer(this.props.currentQuestion, answer))}}
+      onChangeQuestion={(nextQuestion)=>{this.props.dispatch(changeQuestion(nextQuestion))}}
+      onInitQuestions={(questions)=>this.props.dispatch(initQuestions(this.props.questions))}
+      onResetQuestions={(questions)=>this.props.dispatch(initQuestions(this.props.questions))}
+      onSubmit={(questions)=>this.props.dispatch(submit(questions))}
+      score={this.props.score}
+      finished={this.props.finished}
+      timer={this.props.timer}
        /> : <h2>ERROR! Not enough questions</h2>
   return (
     <div className="App">
-      <Navbar questions={props.questions}
+      <Navbar questions={this.props.questions}
+      question={this.props.questions[this.props.currentQuestion]}
+      currentQuestion={this.props.currentQuestion}
+      onChangeQuestion={(nextQuestion)=>{this.props.dispatch(changeQuestion(nextQuestion))}}
+
       />
       {game}
     </div>
   );
 }
+}
 
 
 
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToprops)(App);

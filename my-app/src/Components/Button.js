@@ -37,7 +37,7 @@ export default class Button extends React.Component {
 
 	render() {
 		return(
-      <button class="button special fit" disabled={this.disableButton(this.props.currentQuestion) || this.disableAll(this.props.finished)} onClick={this.props.function}>{this.props.buttonName}</button>
+      <button class="button special fit" disabled={this.disableButton(this.props.currentQuestion) || this.disableAll(this.props.finished)}  onClick={this.props.function}>{this.props.buttonName}</button>
 				);
 	}
 }

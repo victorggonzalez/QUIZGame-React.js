@@ -12,7 +12,7 @@ emptyQuestions(questions){
 
   render(){
     return(
-      <div className="Question">
+      <div className="Question" style={{paddingLeft: '0cm'}}>
         <h3>{this.props.question.question}</h3>
         </div>
     );

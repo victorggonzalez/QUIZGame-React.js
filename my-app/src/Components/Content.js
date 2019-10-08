@@ -7,6 +7,9 @@ import Tips from './Tips';
 
 export default class Content extends React.Component{
 
+  isFinished(isFinished,question){
+    //if(isFinished){return()}
+  }
   render(){
     return(
         <section class="box">
@@ -16,6 +19,7 @@ export default class Content extends React.Component{
 
             <Answer question={this.props.question}
                     onQuestionAnswer={this.props.onQuestionAnswer}
+                   // score={this.props.score}
             />
 
 

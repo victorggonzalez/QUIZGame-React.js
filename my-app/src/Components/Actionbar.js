@@ -28,6 +28,7 @@ export default class Actionbar extends React.Component{
   						}
   }
 
+
   render(){
     return(
       <div key="Actionbar" className="Actionbar" class="row">
@@ -40,7 +41,11 @@ export default class Actionbar extends React.Component{
 						}}}/>
         </div>
         <div class="col-4">
-			   <button href="#" class="button alt fit">Submit</button>
+			     <Button buttonName="Submit" questions={this.props.questions} function={ () => {
+            
+            return this.props.onSubmit(this.props.questions);
+            }}/>
+           
         </div>
         <div class="col-4">
           <Button buttonName="Next" currentQuestion={this.props.currentQuestion}   function={ () => {
@@ -50,6 +55,8 @@ export default class Actionbar extends React.Component{
 							return this.props.onChangeQuestion(this.props.currentQuestion+1);
 						}}}/>
         </div>
+        <h2>Puntuacion:{this.props.score}</h2>
+        
       </div>
 
 

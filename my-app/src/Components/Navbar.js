@@ -12,11 +12,10 @@ export default class Navbar extends React.Component{
     return(
       <header id="header" className="header">
 
-        <h1><a href="index.html">QUIZ Game Chema</a></h1>
+        <h1><a href="index.html">QUIZ Game</a></h1>
         <img src={this.props.logo} alt="Imagen"/>
-
       </header>
-
+      
     );
   }
 

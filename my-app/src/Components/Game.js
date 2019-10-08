@@ -2,6 +2,7 @@ import React from 'react';
 import Content from './Content';
 import Actionbar from './Actionbar';
 
+
 export default class Game extends React.Component{
 
   render() {
@@ -20,6 +21,8 @@ export default class Game extends React.Component{
                       currentQuestion={this.props.currentQuestion}
                       onChangeQuestion={this.props.onChangeQuestion}
                       onInitQuestion={this.props.onInitQuestion}
+                      onSubmit={this.props.onSubmit}
+                     score={this.props.score}
              />
         </section>
 			</div>

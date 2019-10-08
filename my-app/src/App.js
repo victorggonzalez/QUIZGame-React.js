@@ -4,12 +4,14 @@ import {connect} from 'react-redux';
 import {questionAnswer} from './redux/actions';
 import {changeQuestion} from './redux/actions';
 import {initQuestions} from './redux/actions';
+import {submit} from './redux/actions';
 
 
 import logo from './assets/quiz.png';
 import list from './assets/list.png';
 import Game from './Components/Game.js';
 import Navbar from './Components/Navbar.js';
+import Button from "./Components/Button.js";
 import './assets/css/animation.css';
 
 
@@ -25,11 +27,15 @@ function App(props) {
           onQuestionAnswer={(answer) =>{props.dispatch(questionAnswer(props.currentQuestion, answer))}}
           onChangeQuestion={(nextQuestion)=>{props.dispatch(changeQuestion(nextQuestion))}}
           onInitQuestions={(questions)=>props.dispatch(initQuestions(props.questions))}
+          onSubmit={(questions)=>props.dispatch(submit(questions))}
+          score={props.score}
            />
-
+          
     </div>
   );
 }
+
+
 
 function mapStateToProps(state){
   return{    ...state};

@@ -20,7 +20,31 @@
 .App-link {
   color: #09d3ac;
 }
+.correct{
+  background-color: green;
+}
 
+.error{
+  height: 50%;
+   position: relative;
+   margin: 0;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%)
+}
+
+.buttonBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 0 !important;
+}
+.buttonIndex{
+  border: 0 !important;
+}
 .dropdown {
   position: relative;
   display: inline-block;

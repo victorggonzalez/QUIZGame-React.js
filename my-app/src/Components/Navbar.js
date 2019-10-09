@@ -11,11 +11,20 @@ export default class Navbar extends React.Component{
       <header id="header" className="header">
 
         <h1><a href="index.html">QUIZ Game</a></h1>
+        <h2 style={{color: 'white'}}>Score: {this.props.score}</h2>
+
         <nav id="nav" style={{paddingRight: '1cm'}}>
         <div class="dropdown">
           <span style={{color: 'white'}}>See all the questions</span>
             <div class="dropdown-content" >
-              <Index/>
+              <Index
+                  questions={this.props.questions}
+                  question={this.props.questions[this.props.currentQuestion]}
+                  currentQuestion={this.props.currentQuestion}
+                  onChangeQuestion={this.props.onChangeQuestion}
+                  score={this.props.score}
+                  finished={this.props.finished}
+                  timer={this.props.timer}/>
             </div>
         </div>
 

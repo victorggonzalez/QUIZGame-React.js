@@ -10,8 +10,8 @@ export default class Tips extends React.Component {
   showTips(question){
     if(question.tips.length !== 0){
       return (
-        <div className="Tips">
-          <h1><li>Tips:</li></h1>
+        <div>
+          <h1>Tips:</h1>
           <ul>
             {this.props.question.tips.map((tip,id)=>{
 			           return (<li>{tip}</li>

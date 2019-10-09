@@ -11,17 +11,7 @@ export default class Actionbar extends React.Component{
 
 	}
 
-  newQuestions(){
-    let url = "https://quiz.dit.upm.es/api/quizzes/random10wa?token=b61cccee4c3c81170f14"
 
-    fetch(url)
-        .then(res => res.json())
-        .then(json => {
-          this.props.dispatch(this.props.onInitQuestions(json))})
-        .catch(error => {
-          console.log(error);
-        });
-  }
 
 
   render(){
@@ -50,16 +40,8 @@ export default class Actionbar extends React.Component{
 							return this.props.onChangeQuestion(this.props.currentQuestion+1);
 						}}}/>
         </div>
-        <h2>Puntuacion:{this.props.score}</h2>
-
       </div>
-      <div class="row">
-      <p/>
-      <Button buttonName="Reset"    function={ () => {
-          return this.props.onResetQuestions(); }}
-          />
 
-      </div>
       </div>
 
 

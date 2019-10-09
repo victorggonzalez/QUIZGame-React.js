@@ -3,7 +3,7 @@ import React from 'react';
 export default class Button extends React.Component {
 	constructor(props){
 		super(props);
-
+		this.disableButton=this.disableButton.bind(this);
 	}
 
 

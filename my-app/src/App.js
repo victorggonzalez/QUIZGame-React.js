@@ -11,7 +11,7 @@ import Navbar from './Components/Navbar.js';
 import Button from './Components/Button.js';
 
 
-function mapStateToprops(state){
+function mapStateToProps(state){
   return{    ...state};
 }
 

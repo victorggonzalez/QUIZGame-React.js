@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import {connect} from 'react-redux';
-import {questionAnswer} from './redux/actions';
-import {changeQuestion} from './redux/actions';
-import {initQuestions} from './redux/actions';
-import {submit} from './redux/actions';
-import {timer} from './redux/actions';
+import {questionAnswer, changeQuestion, initQuestions, submit, timer} from './redux/actions';
+
 
 
 
@@ -98,4 +95,4 @@ class App extends Component{
 
 
 
-export default connect(mapStateToprops)(App);
+export default connect(mapStateToProps)(App);

@@ -3,6 +3,7 @@ import Image from './Image';
 import Question from './Question';
 import Answer from './Answer';
 import Tips from './Tips';
+import Check from './Check';
 
 
 export default class Content extends React.Component{
@@ -10,13 +11,15 @@ export default class Content extends React.Component{
 
 
   render(){
+    let check = ((this.props.question.answer === this.props.question.userAnswer)) ?
+    <Check/> : <p/>
     return(
         <section class="box">
         <div class="row" style={{height: '40vh'}}>
           <div class="col-4">
             <div class="row">
             <Question question={this.props.question}
-            currentQuestion={this.props.currentQuestion}
+                      currentQuestion={this.props.currentQuestion}
                       questions={this.props.questions}/>
             </div>
             <p/>
@@ -25,8 +28,8 @@ export default class Content extends React.Component{
                     currentQuestion={this.props.currentQuestion}
                     onQuestionAnswer={this.props.onQuestionAnswer}
                     finished={this.props.finished}
-                   // score={this.props.score}
             />
+            {check}
             </div>
           </div>
           <div class="col-4" >

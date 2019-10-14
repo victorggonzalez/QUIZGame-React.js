@@ -58,7 +58,7 @@ class App extends Component{
   console.log(this.props);
 
   //Comprueba que el array de preguntas esta completo, y en caso contrario muestra un gif de carga
-  let game = (this.props.questions.length == 10) ?
+  let game = (this.props.questions.length === 10) ?
   <Game questions={this.props.questions}
       question={this.props.questions[this.props.currentQuestion]}
       currentQuestion={this.props.currentQuestion}
@@ -66,7 +66,6 @@ class App extends Component{
       onChangeQuestion={(nextQuestion)=>{this.props.dispatch(changeQuestion(nextQuestion))}}
       onInitQuestions={() => {this.newQuestions()}}
       onResetQuestions={() => {this.newQuestions()}}
-
       onSubmit={(questions)=>this.props.dispatch(submit(questions))}
       score={this.props.score}
       finished={this.props.finished}
@@ -80,6 +79,7 @@ class App extends Component{
           onChangeQuestion={(nextQuestion)=>{this.props.dispatch(changeQuestion(nextQuestion))}}
           score={this.props.score}
           finished={this.props.finished}
+          timer={this.props.timer}
       />
       {game}
       <footer>

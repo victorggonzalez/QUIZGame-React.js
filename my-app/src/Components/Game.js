@@ -11,9 +11,7 @@ export default class Game extends React.Component{
     return(
       <div id="main" style={{paddingBottom: '0cm'}}>
       <div key="Game" className="Game">
-      <aside key="Timer" className="Timer" style={{float: 'left'}}>
-        <Timer timer={this.props.timer}/>
-      </aside>
+  
       <section className="Content" class="container">
 				    <Content question={this.props.question}
                     questions={this.props.questions}

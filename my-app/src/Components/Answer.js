@@ -9,14 +9,6 @@ export default class Answer extends React.Component{
       return true;
     }
   }
-/*  checkAnswer(question){
-    let color = ""
-    if(question.answer.trim().toUpperCase()===question.userAnswer.trim().toUpperCase()){
-      color = "green";
-    }
-  }*/
-
-
   render(){
 
     return(
@@ -24,7 +16,7 @@ export default class Answer extends React.Component{
         <input type="text" placeholder="Type your answer here"  disabled={this.disableAnswer(this.props.finished)} value={this.props.question.userAnswer || ''}
           onChange={(e)=>{
             this.props.onQuestionAnswer(e.target.value);}}/>
-        
+
       </div>
     );
   }

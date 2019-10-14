@@ -1,5 +1,6 @@
 import React from 'react';
 import Index from './Index';
+import Timer from './Timer';
 
 export default class Navbar extends React.Component{
 
@@ -11,7 +12,7 @@ export default class Navbar extends React.Component{
       <header id="header" className="header">
 
         <h1><a href="index.html">QUIZ Game</a></h1>
-        <h2 style={{color: 'white'}}>Score: {this.props.score}</h2>
+        <h2 style={{color: 'white'}}>Time remaining: {this.props.timer} s</h2>
 
         <nav id="nav" style={{paddingRight: '1cm'}}>
         <div class="dropdown">

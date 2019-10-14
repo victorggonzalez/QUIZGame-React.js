@@ -9,10 +9,7 @@ import Check from './Check';
 export default class Content extends React.Component{
 
 
-
   render(){
-    let check = ((this.props.question.answer === this.props.question.userAnswer)) ?
-    <Check/> : <p/>
     return(
         <section class="box">
         <div class="row" style={{height: '40vh'}}>
@@ -29,7 +26,9 @@ export default class Content extends React.Component{
                     onQuestionAnswer={this.props.onQuestionAnswer}
                     finished={this.props.finished}
             />
-            {check}
+            <Check question={this.props.question}
+                  currentQuestion={this.props.currentQuestion}
+            finished={this.props.finished}/>
             </div>
           </div>
           <div class="col-4" >

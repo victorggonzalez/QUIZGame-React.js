@@ -11,10 +11,10 @@ export default class Tips extends React.Component {
     if(question.tips.length !== 0){
       return (
         <div>
-          <h1>Tips:</h1>
-          <ul>
+          <h1 >Tips:</h1>
+          <ul style={{marginBottom: '10px', marginLeft: '60px'}}>
             {this.props.question.tips.map((tip,id)=>{
-			           return (<li>{tip}</li>
+			           return (<li style={{textAlign: 'left', paddingLeft:'0px'}}>{tip}</li>
                  );})}
           </ul>
         </div>

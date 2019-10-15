@@ -18,7 +18,7 @@ export default class Navbar extends React.Component{
 
         <nav id="nav" style={{paddingRight: '1cm'}}>
         <ul>
-        <li><button class="button alt small" style={{marginRight: '24cm', border: '0px', borderRadius: '50%'}} onClick={ () => {
+        <li><button class="button alt small" style={{ marginRight: '1cm', border: '0px', borderRadius: '50%'}} onClick={ () => {
             return this.props.newQuestions();}}>Reset game</button>
         </li>
         <li><div class="dropdown">

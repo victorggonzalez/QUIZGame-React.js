@@ -12,7 +12,7 @@ export default class Content extends React.Component{
   render(){
 
     return(
-        <section class="box">
+        <section class="box" style={{paddingTop: '40px'}}>
         <div class="row" style={{height: '40vh'}}>
           <div class="col-4">
             <div class="row">
@@ -20,13 +20,14 @@ export default class Content extends React.Component{
                       currentQuestion={this.props.currentQuestion}
                       questions={this.props.questions}/>
             </div>
-            <p/>
             <div class="row">
             <Answer question={this.props.question}
                     currentQuestion={this.props.currentQuestion}
                     onQuestionAnswer={this.props.onQuestionAnswer}
                     finished={this.props.finished}
             />
+            </div>
+            <div class="row" style={{paddingTop: '10px'}}>
             <Check question={this.props.question}
                   currentQuestion={this.props.currentQuestion}
             finished={this.props.finished}/>

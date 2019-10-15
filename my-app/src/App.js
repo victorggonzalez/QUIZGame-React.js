@@ -20,6 +20,7 @@ class App extends Component{
 
   constructor(props){
     super(props);
+    this.newQuestions=this.newQuestions.bind(this);
 
   }
   componentDidMount(props) {
@@ -80,13 +81,10 @@ class App extends Component{
           score={this.props.score}
           finished={this.props.finished}
           timer={this.props.timer}
+          newQuestions={this.newQuestions}
       />
       {game}
-      <footer>
-      <Button buttonName="Reset" class="resetButton" function={ () => {
-          return this.newQuestions();}}
-          />
-      </footer>
+
     </div>
   );
 }

@@ -10,6 +10,7 @@ export default class Content extends React.Component{
 
 
   render(){
+
     return(
         <section class="box">
         <div class="row" style={{height: '40vh'}}>

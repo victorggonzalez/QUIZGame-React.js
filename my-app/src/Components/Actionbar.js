@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import Score from './Score';
 
 
 
@@ -15,6 +16,8 @@ export default class Actionbar extends React.Component{
 
 
   render(){
+    let score = (this.props.finished) ?
+    <Score score={this.props.score}/> : <button class="button fit disabled">Check score</button>
     return(
       <div class="box">
       <div key="Actionbar" className="Actionbar" class="row">
@@ -30,6 +33,10 @@ export default class Actionbar extends React.Component{
 			     <Button buttonName="Submit" questions={this.props.questions} finished={this.props.finished} function={ () => {
             return this.props.onSubmit(this.props.questions);
             }}/>
+            <p></p>
+            {score}
+
+
 
         </div>
         <div class="col-4">

@@ -3,16 +3,23 @@ import Content from './Content';
 import Actionbar from './Actionbar';
 import Index from './Index';
 import Timer from './Timer';
+import Score from './Score';
+
 
 
 export default class Game extends React.Component{
 
   render() {
+    //Comprueba que el array de preguntas esta completo, y en caso contrario muestra un gif de carga
+    let score = (this.props.finished) ?
+    <Score style={{float: 'center'}}
+        score={this.props.score}
+        finished={this.props.finished}
+        timer={this.props.timer} /> : <div/>
     return(
       <div id="main" style={{paddingBottom: '0cm'}}>
       <div key="Game" className="Game">
-  
-      <section className="Content" class="container">
+        <section className="Content" class="container">
 				    <Content question={this.props.question}
                     questions={this.props.questions}
                     currentQuestion={this.props.currentQuestion}

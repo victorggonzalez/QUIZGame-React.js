@@ -1,5 +1,6 @@
 import React from 'react';
 import Index from './Index';
+import Button from './Button';
 import Timer from './Timer';
 
 export default class Navbar extends React.Component{
@@ -12,10 +13,15 @@ export default class Navbar extends React.Component{
       <header id="header" className="header">
 
         <h1><a href="index.html">QUIZ Game</a></h1>
+
         <h2 style={{color: 'white'}}>Time remaining: {this.props.timer} s</h2>
 
         <nav id="nav" style={{paddingRight: '1cm'}}>
-        <div class="dropdown">
+        <ul>
+        <li><button class="button alt small" style={{marginRight: '24cm', border: '0px', borderRadius: '50%'}} onClick={ () => {
+            return this.props.newQuestions();}}>Reset game</button>
+        </li>
+        <li><div class="dropdown">
           <span style={{color: 'white'}}>See all the questions</span>
             <div class="dropdown-content" >
               <Index
@@ -27,7 +33,8 @@ export default class Navbar extends React.Component{
                   finished={this.props.finished}
                   timer={this.props.timer}/>
             </div>
-        </div>
+        </div></li>
+        </ul>
 
 
 					</nav>

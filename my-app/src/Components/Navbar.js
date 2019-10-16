@@ -1,13 +1,8 @@
 import React from 'react';
 import Index from './Index';
 import Button from './Button';
-import Timer from './Timer';
 
 export default class Navbar extends React.Component{
-
-
-
-
   render(){
     return(
       <header id="header" className="header">
@@ -23,7 +18,6 @@ export default class Navbar extends React.Component{
         </li>
         <li><div class="dropdown">
           <span style={{color: 'white'}}>See all the questions</span>
-            <div class="dropdown-content" >
               <Index
                   questions={this.props.questions}
                   question={this.props.questions[this.props.currentQuestion]}
@@ -32,7 +26,6 @@ export default class Navbar extends React.Component{
                   score={this.props.score}
                   finished={this.props.finished}
                   timer={this.props.timer}/>
-            </div>
         </div></li>
         </ul>
 

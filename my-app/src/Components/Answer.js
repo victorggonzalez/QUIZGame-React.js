@@ -1,14 +1,16 @@
 import React from 'react';
 import Check from './Check'
 
+//Componente que muestra un input para introducir una respuesta, o la respuesta introducida por el usuario
 export default class Answer extends React.Component{
 
-//funcion que impide escribir una vez que ha finalizado el juego
+//Funcion que impide escribir en el input una vez que ha finalizado el juego
   disableAnswer(finished){
     if(finished === true){
       return true;
     }
   }
+  
   render(){
 
     return(

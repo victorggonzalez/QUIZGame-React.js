@@ -7,8 +7,6 @@ import Check from './Check';
 
 
 export default class Content extends React.Component{
-
-
   render(){
 
     return(

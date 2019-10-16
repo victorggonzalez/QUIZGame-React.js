@@ -2,7 +2,6 @@ import React from 'react';
 import Content from './Content';
 import Actionbar from './Actionbar';
 import Index from './Index';
-import Timer from './Timer';
 import Score from './Score';
 
 
@@ -27,7 +26,7 @@ export default class Game extends React.Component{
                     finished={this.props.finished}
                     />
       </section>
-      <section className="Actionbar" class="container small">
+      <footer className="Actionbar" class="container small">
 				    <Actionbar question={this.props.question}
                       questions={this.props.questions}
                       currentQuestion={this.props.currentQuestion}
@@ -38,13 +37,7 @@ export default class Game extends React.Component{
                       finished={this.props.finished}
 
              />
-      </section>
-
-
-
-
-
-
+      </footer>
 			 </div>
       </div>
 

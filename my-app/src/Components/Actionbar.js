@@ -3,23 +3,18 @@ import Button from './Button';
 import Score from './Score';
 
 
-
+//Componente que contiene cuatro botones: previous y next para cambiar de pregunta, 
+//submit para enviar los resultados y check score para comprobar la puntuacion
 export default class Actionbar extends React.Component{
 
-
-  constructor(props){
-		super(props);
-
-	}
-
-
-
-
   render(){
+    //Si el juego ha finalizado, se podra comprobar la puntuacion mediante el componente score, 
+    //si no, el boton estara desactivado.
     let score = (this.props.finished) ?
     <Score score={this.props.score}/> : <button class="button fit disabled">Check score</button>
+
     return(
-      <div class="box">
+      <div class="box" style={{padding: '30px'}}>
       <div key="Actionbar" className="Actionbar" class="row">
         <div class="col-4">
             <Button buttonName="Previous" currentQuestion={this.props.currentQuestion} function={ () => {
@@ -30,14 +25,11 @@ export default class Actionbar extends React.Component{
 						}}}/>
         </div>
         <div class="col-4">
-			     <Button buttonName="Submit" questions={this.props.questions} finished={this.props.finished} function={ () => {
+			     <Button buttonName="Submit" questions={this.props.questions} style={{backgroundColor: 'red'}} finished={this.props.finished} function={ () => {
             return this.props.onSubmit(this.props.questions);
             }}/>
             <p></p>
             {score}
-
-
-
         </div>
         <div class="col-4">
           <Button buttonName="Next" currentQuestion={this.props.currentQuestion}   function={ () => {

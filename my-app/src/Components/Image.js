@@ -2,9 +2,9 @@ import React from 'react'
 
 export default class Image extends React.Component {
     render(){
-      let image = (this.props.question.attachment.url !== null ) ?
-        <img src={this.props.question.attachment.url} style={{width: '100%'}} alt="Imagen de la pregunta"/>:
-        <img src="https://www.freeiconspng.com/uploads/spinner-icon-0.gif"  alt="Loading" class="error"/>
+      let image = (this.props.question.attachment !== null ) ?
+        <img src={this.props.question.attachment.url} style={{width: '100%'}} alt="Imagen de la pregunta"/> :
+        <h1 style={{color: 'red', textAlign: 'center'}}>IMAGE NOT AVAILABLE</h1>
         return(
 
 

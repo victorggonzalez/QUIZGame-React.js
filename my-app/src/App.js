@@ -2,13 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 import {connect} from 'react-redux';
 import {questionAnswer, changeQuestion, initQuestions, submit, timer} from './redux/actions';
-
-
-
-
 import Game from './Components/Game.js';
 import Navbar from './Components/Navbar.js';
-import Button from './Components/Button.js';
 
 
 function mapStateToProps(state){
@@ -70,7 +65,7 @@ class App extends Component{
       onSubmit={(questions)=>this.props.dispatch(submit(questions))}
       score={this.props.score}
       finished={this.props.finished}
-      timer={this.props.timer} /> : <img src="https://www.freeiconspng.com/uploads/spinner-icon-0.gif"  alt="Funny image" class="error"/>
+      timer={this.props.timer} /> : <img src="https://www.freeiconspng.com/uploads/spinner-icon-0.gif"  alt="Loading" class="error"/>
 
   return (
     <div className="App">

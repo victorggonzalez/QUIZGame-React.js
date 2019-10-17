@@ -9,6 +9,10 @@ import Check from './Check';
 export default class Content extends React.Component{
   render(){
 
+    let authorPhoto = (this.props.question.author.photo !== null) ?
+    <img src={this.props.question.author.photo.url} width="150" alt="Imagen"/> : 
+    <h1 style={{color: 'red', textAlign: 'center'}}>IMAGE NOT AVAILABLE</h1>
+
     return(
         <section class="box" style={{paddingTop: '40px'}}>
         <div class="row" style={{height: '40vh'}}>
@@ -40,8 +44,9 @@ export default class Content extends React.Component{
                 <Tips question={this.props.question}/>
                 <h1>Created by: {this.props.question.author.username}</h1>
                     <span class="image">
-                      <img src={this.props.question.author.photo.url} width="150" alt="Imagen"/>
+                      {authorPhoto}
                       </span>
+                      }
                 </ul>
         </div>
         </div>

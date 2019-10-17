@@ -1,6 +1,4 @@
 import React from 'react';
-import Content from './Content';
-import Button from './Button';
 
 
 //Componente que muestra un dropdown menu con las preguntas, para acceder directamente a la pregunta elegida. 

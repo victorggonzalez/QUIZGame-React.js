@@ -1,5 +1,4 @@
 import React from 'react';
-import Check from './Check'
 
 //Componente que muestra un input para introducir una respuesta, o la respuesta introducida por el usuario
 export default class Answer extends React.Component{

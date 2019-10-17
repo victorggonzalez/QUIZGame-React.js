@@ -18,6 +18,7 @@ function score(state = 0, action = {}){
             score=score+1;
           }
         }
+        return score;
       })
       return score;
     case INIT_QUESTIONS:

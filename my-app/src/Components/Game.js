@@ -1,8 +1,6 @@
 import React from 'react';
 import Content from './Content';
 import Actionbar from './Actionbar';
-import Index from './Index';
-import Score from './Score';
 
 
 
@@ -10,11 +8,7 @@ export default class Game extends React.Component{
 
   render() {
     //Comprueba que el array de preguntas esta completo, y en caso contrario muestra un gif de carga
-    let score = (this.props.finished) ?
-    <Score style={{float: 'center'}}
-        score={this.props.score}
-        finished={this.props.finished}
-        timer={this.props.timer} /> : <div/>
+    
     return(
       <div id="main" style={{paddingBottom: '0cm'}}>
       <div key="Game" className="Game">
@@ -33,11 +27,12 @@ export default class Game extends React.Component{
                       onChangeQuestion={this.props.onChangeQuestion}
                       onResetQuestion={this.props.onInitQuestion}
                       onSubmit={this.props.onSubmit}
-                     score={this.props.score}
+                      score={this.props.score}
                       finished={this.props.finished}
 
              />
       </footer>
+
 			 </div>
       </div>
 

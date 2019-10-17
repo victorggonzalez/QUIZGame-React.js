@@ -10,7 +10,7 @@ export default class Content extends React.Component{
   render(){
 
     let authorPhoto = (this.props.question.author.photo !== null) ?
-    <img src={this.props.question.author.photo.url} width="150" alt="Imagen"/> : 
+    <img src={this.props.question.author.photo.url} width="100" height="100"  alt="Imagen"/> : 
     <h1 style={{color: 'red', textAlign: 'center'}}>IMAGE NOT AVAILABLE</h1>
 
     return(
@@ -46,7 +46,7 @@ export default class Content extends React.Component{
                     <span class="image">
                       {authorPhoto}
                       </span>
-                      }
+                      
                 </ul>
         </div>
         </div>

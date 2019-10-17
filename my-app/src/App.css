@@ -76,7 +76,7 @@
   color: #333;
 }
 .popup .close:hover {
-  color: #06D85F;
+  color: #333;
 }
 .popup .content {
   max-height: 30%;
@@ -122,6 +122,8 @@
     display: inline-block;
     font-weight: 400;
     height: 2em;
+    margin-top: 10px;
+    margin-bottom: 10px;
     text-align: center;
     text-decoration: none;
     white-space: nowrap;

@@ -19,7 +19,7 @@ export default class Check extends React.Component{
 
     return(
       <div style={{textAlign: 'center'}}>
-      <p>{check}{wrong}</p>
+      {check}{wrong}
       </div>
     );
   }

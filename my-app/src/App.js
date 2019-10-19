@@ -31,6 +31,7 @@ class App extends Component{
 
         var interval = setInterval(() =>{
           if (this.props.timer === 0){
+            this.props.dispatch(submit(this.props.questions));
             return 0;
           }
           this.props.dispatch(timer(this.props.timer-1));
@@ -68,7 +69,7 @@ class App extends Component{
       timer={this.props.timer} /> : <img src="https://www.freeiconspng.com/uploads/spinner-icon-0.gif"  alt="Loading" class="error"/>
 
   return (
-    <div className="App">
+    <div className="App" >
       <Navbar questions={this.props.questions}
           question={this.props.questions[this.props.currentQuestion]}
           currentQuestion={this.props.currentQuestion}
@@ -81,6 +82,8 @@ class App extends Component{
       {game}
 
     </div>
+
+
   );
 }
 }

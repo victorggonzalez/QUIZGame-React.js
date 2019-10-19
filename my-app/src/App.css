@@ -2170,8 +2170,9 @@
 	header p {
 		color: #999;
 		position: relative;
-		margin: 0 0 1.5em 0;
-		font-style: italic;
+		text-align: left;
+		font-size: 1.5em;
+		margin: 0 0 0 0;
 	}
 
 	header h2 + p {
@@ -3560,7 +3561,7 @@
 		display: none;
 	}
 
-	@media screen and (max-width: 840px) {
+	@media screen and (max-width: 900px) {
 
 		/* Basic */
 
